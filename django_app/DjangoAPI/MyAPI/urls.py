@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
    # path('admin/', admin.site.urls),
-   path('status/',views.newsTag)
+   path('status/',views.newsTag),
+   path('form/',views.FormAPI),
 ]
