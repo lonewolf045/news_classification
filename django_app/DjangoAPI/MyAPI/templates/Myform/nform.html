@@ -3,16 +3,70 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Form</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+			body {
+				background-image:linear-gradient( 115deg, rgba(	204, 43, 86, 0.8), rgba(117,58,136, 0.7) ), url(https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg);
+				color: #f3f3f3;
+			}
+			header {
+				text-align:center;
+				font-size: 30px;
+			}
+			form {
+				font-size: 20px;
+				font-weight: bold;
+				margin: 5% auto ;
+  				background: rgba(66,39,90, 0.8);
+  				padding: 1.5%;
+  				border: none;
+  				border-radius: 4px;
+  				width: 720px;
+				justify-content: start;
+			}
+			@media (min-width: 768px) {
+  				form {
+      				max-width: 720px;
+  				}
+			}
+
+			@media (min-width: 576px) {
+  				form {
+      				max-width: 540px;
+  				}
+			}
+			input[type=submit] {
+				width: 30%;
+  				text-align:center;
+  				height: 2rem;
+  				margin: 2.5% 35%;
+				font-size: 1.25rem;
+			
+			}
+			.fill {
+				margin: 2% 0;
+				width: 99%;
+				margin: 2.5% auto;
+			}
+			textarea {
+				resize: none;
+			}
+		</style>
 	</head>
 
 	<body>
+		<header>
+			<h1>News Segregator</h1>
+		</header>
 		<form action='' method='post'>
 			{% csrf_token %}
-			Number   :   <input type="number" name="number"> <br />
-			Headline :   <input type="text" name="headline"> <br />
-			Name     :   <input type="text" name="name"> <br />
-			Date     :   <input type="text" name="date"> <br />
-			Content  :   <textarea name="content" placeholder="Enter the news"></textarea> <br /><br />
+			Number   :  <br> <input type="number" name="number" class = 'fill' required> <br />
+			Headline :  <br> <input type="text" name="headline" class = 'fill' required> <br />
+			Name     :  <br> <input type="text" name="name" class = 'fill' required> <br />
+			Date     :  <br> <input type="date" name="date" class = 'fill' required > <br />
+			Content  :  <br> <textarea name="content" placeholder="Enter the news" class = 'fill' spellcheck = 'true'></textarea> <br /><br />
 			<input type="submit" value="submit">
 		
 		</form>
